@@ -1,9 +1,17 @@
 {
   "name": "node-example",
   "version": "0.0.1",
-  "dependencies": {
+  "scripts": {
+    "start": "node index.js ",
+    "test": "mocha --reporter spec test"
   },
+  "dependencies": {},
   "engines": {
     "node": "0.6.x"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "sinon": "^6.1.5"
   }
 }
