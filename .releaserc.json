@@ -1,0 +1,23 @@
+{
+    "branch": "master",
+    "repositoryUrl": "https://github.com/mohamedalaa33/nodejs-hello-world",
+    "debug": "true",
+    "plugins": [
+            "@semantic-release/commit-analyzer", //check commit messages {feat,fix,bug}
+            "@semantic-release/release-notes-generator", //{calculate how many fixes and how many features}
+            "@semantic-release/github", //for github publish credentials 
+    [
+    "@semantic-release/changelog",
+        {
+            "changelogFile": "CHANGELOG.md
+        }
+    ],
+            ["@semantic-release/npm", {
+                    "npmPublish": false
+            }],
+            ["@semantic-release/git", { //git for modifying files 
+            "assets": [ "package.json","package-lock.json", "CHANGELOG.md"], //change version in the previous files 
+            "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}" //commit these changes to git 
+      }]
+]
+}
